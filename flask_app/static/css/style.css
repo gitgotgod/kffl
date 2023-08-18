@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2f2c2f;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    border: 1px solid black;
+    padding: 5px;
+    width: 50%;
+}
+
+.user-list,
+.add-user {
+    margin-bottom: 2rem;
+}
+
+.user-list h2,
+.add-user h2 {
+    margin-bottom: 1rem;
+}
+
+.add {
+    background-color: blue;
+    color: white;
+    margin: 5px;
+}
+
+.subtract {
+    background-color: red;
+    color: white;
+    margin: 5px;
+    margin-left: 10px;
+}
+
+.delete {
+    background-color: rgb(132, 48, 48);
+    color: white;
+    margin-left: 100px;
+}

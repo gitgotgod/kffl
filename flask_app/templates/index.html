@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Points Tally</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Season Awards Tally</h1>
+    </header>
+    <main>
+        <section class="user-list">
+            <h2>Winners List</h2>
+            <ul>
+                {% for user in users %}
+                <li>
+                    <div class="user_erase" style="display: flex;">
+                        {{ user.name }} - Points: {{ user.points }}
+                    </div>
+                    <div class="buttons" style="display: flex;">
+                        <form action="{{ url_for('add_points', user_id=user.id, points=1) }}" method="POST">
+                            <button type="submit" class="add">+ 1 Point</button>
+                        </form>
+                        <form action="{{ url_for('subtract_points', user_id=user.id, points=1) }}" method="POST">
+                            <button type="submit" class="subtract">- 1 Point</button>
+                        </form>
+                        <form action="{{ url_for('delete_user', user_id=user.id) }}" method="POST">
+                            <button type="submit" class="delete">Delete User</button>
+                        </form>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="add-user">
+            <h2>Add User</h2>
+            <form action="{{ url_for('add_user') }}" method="POST">
+                <input type="text" name="username" placeholder="Username">
+                <button type="submit">Add User</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
+
+<!-- Format for adding images -->
+<!-- <img src="{{ url_for('static', filename='images/img.png') }}"> -->
