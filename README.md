@@ -1,4 +1,4 @@
-# kffl
+# kffl - solo project for CodingDojo
 flag football things
 Making a simple page for tracking points -- will be used with participating venues for special deals
 
